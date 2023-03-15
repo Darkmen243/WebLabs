@@ -1,28 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
+    <CheckBox v-model="switch1"></CheckBox>
+    <SwitchButton v-model="switch1"></SwitchButton>
+   </div>
+  </template>
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import SwitchButton from './components/SwitchButton.vue'
+import CheckBox from './components/Checkbox.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+   SwitchButton,
+   CheckBox
+  },
+  data:
+    function () {
+      return {
+        switch1:false
+      };
+    }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: Lato, sans-serif;
+}
+
+#app .switch-button {
+  margin: 10px 0;
 }
 </style>
